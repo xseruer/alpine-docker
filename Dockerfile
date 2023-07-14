@@ -1,3 +1,3 @@
 FROM alpine
-RUN touch /startup.sh && chmod +x /startup.sh
-ENTRYPOINT ["/startup.sh"]
+RUN echo "tail -f /dev/null" >> /startup.sh && chmod +x /startup.sh
+ENTRYPOINT ["/bin/sh", "/startup.sh"]
